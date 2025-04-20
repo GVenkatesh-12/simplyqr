@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplyQR - Advanced QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SimplyQR</h1>
+            <p class="subtitle">Create beautiful QR codes with custom styles and colors</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="input-section">
+                <label for="qrText">Enter Text or URL</label>
+                <textarea id="qrText" placeholder="Enter text or URL to generate QR code"></textarea>
+            </div>
+
+            <div class="options-section">
+                <div class="option-group">
+                    <h3>QR Code Style</h3>
+                    <select id="qrStyle">
+                        <option value="squares">Squares</option>
+                        <option value="dots">Dots</option>
+                        <option value="rounded">Rounded</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <h3>QR Code Color</h3>
+                    <input type="color" id="qrColor" value="#000000">
+                </div>
+
+                <div class="option-group">
+                    <h3>Background</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="transparentBg"> Transparent Background
+                    </label>
+                    <input type="color" id="bgColor" value="#ffffff">
+                </div>
+
+                <div class="option-group">
+                    <h3>Output Format</h3>
+                    <select id="format">
+                        <option value="png">PNG</option>
+                        <option value="jpg">JPG</option>
+                        <option value="svg">SVG</option>
+                    </select>
+                </div>
+
+                <div class="option-group">
+                    <h3>Size (pixels)</h3>
+                    <div class="range-container">
+                        <input type="range" id="size" min="100" max="1000" value="300">
+                        <span id="sizeValue">300px</span>
+                    </div>
+                </div>
+
+                <div class="option-group">
+                    <h3>Add Logo</h3>
+                    <div class="file-input-container">
+                        <label for="logo" class="file-input-label">
+                            <span id="logoFileName">Choose Logo</span>
+                            <input type="file" id="logo" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qr-container">
+                <div id="qrCode"></div>
+            </div>
+
+            <div class="actions">
+                <button id="generateBtn" class="primary-btn">Generate QR Code</button>
+                <button id="downloadBtn" class="secondary-btn" disabled>Download</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
